@@ -1,5 +1,4 @@
 package Metasmash;
-
 public class Main extends org.bukkit.plugin.java.JavaPlugin {
   public final java.util.logging.Logger logger = java.util.logging.Logger.getLogger( "Minecraft" );
   public static org.bukkit.plugin.Plugin plugin;
@@ -158,14 +157,14 @@ public class Main extends org.bukkit.plugin.java.JavaPlugin {
       this.registerBB( player );
     }
   }
-  public String getServerTimeHMS() {
+  public java.lang.String getServerTimeHMS() {
 	java.util.Calendar calendar = java.util.Calendar.getInstance();
 	calendar.setTimeZone( java.util.TimeZone.getTimeZone( "Europe/Paris" ) );
     long ms = calendar.getTimeInMillis();
     long s = ( ms / 1000 ) % 60;
     long m = ( ms / ( 1000 * 60 ) ) % 60;
     long h = ( ms / ( 1000 * 60 * 60 ) ) % 24;
-    return( ( h < 10 ? "0" + h : new StringBuilder().append( h ).toString() ) + ":" + ( m < 10 ? "0" + m : new StringBuilder().append( m ).toString() ) + ":" + ( s < 10 ? "0" + s : new StringBuilder().append( s ).toString() ) );
+    return( ( h < 10 ? "0" + h : new java.lang.StringBuilder().append( h ).toString() ) + ":" + ( m < 10 ? "0" + m : new java.lang.StringBuilder().append( m ).toString() ) + ":" + ( s < 10 ? "0" + s : new java.lang.StringBuilder().append( s ).toString() ) );
   }
   @SuppressWarnings( { "deprecation", "unused" } )
   public boolean onCommand( org.bukkit.command.CommandSender sender, org.bukkit.command.Command cmd, java.lang.String commandLabel, java.lang.String[] ARGV ) {
