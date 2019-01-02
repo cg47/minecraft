@@ -1,16 +1,16 @@
 package Metasmash;
-
 public class ePlayerAnimation implements org.bukkit.event.Listener {
   @SuppressWarnings( "unused" )
   private Main plugin;
-  
   public ePlayerAnimation( Main port ) {
     this.plugin = port;
   }
-  
+  // onPlayerAnimation \\
   @org.bukkit.event.EventHandler
   public void onPlayerAnimation( org.bukkit.event.player.PlayerAnimationEvent e ) {
+	// player = event.player
     org.bukkit.entity.Player self = e.getPlayer();
+    /* item.enchantment.thunder == true */
     if( e.getAnimationType() == org.bukkit.event.player.PlayerAnimationType.ARM_SWING ) {
       if( self.getInventory().getItemInMainHand().getType() == org.bukkit.Material.DIAMOND_SWORD ) {
         if( !ms ) {
@@ -37,14 +37,12 @@ public class ePlayerAnimation implements org.bukkit.event.Listener {
       }
     }
   }
-  
   public long cd = 625;
-  public Boolean ms = false;
+  public java.lang.Boolean ms = false;
   public long ms1 = 0;
   public long ms2 = 9000;
-  public Integer rng = 1;
-  public Boolean use = false;
-  
+  public java.lang.Integer rng = 1;
+  public java.lang.Boolean use = false;
   public static org.bukkit.entity.Entity getTarget( final org.bukkit.entity.Player player ) {
     assert player != null;
     org.bukkit.entity.Entity target = null;
