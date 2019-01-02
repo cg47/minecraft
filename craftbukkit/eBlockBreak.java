@@ -1,8 +1,6 @@
 package Metasmash;
-
 public class eBlockBreak implements org.bukkit.event.Listener {
   private Main plugin;
-  
   public eBlockBreak( Main port ) {
     this.plugin = port;
   }
@@ -14,12 +12,12 @@ public class eBlockBreak implements org.bukkit.event.Listener {
     // player = event.player
     org.bukkit.entity.Player self = e.getPlayer();
     /* only operators can destroy command blocks */
-    if( isCommandBlock( block ) && !self.isOp() ) {
+    if( this.isCommandBlock( block ) && !self.isOp() ) {
       e.setCancelled( true );
       this.plugin.sendMessage( self, "\\C[Error]\\R I don't think so." );
     }
   }
-  private Boolean isCommandBlock( org.bukkit.block.Block block ) {
+  private java.lang.Boolean isCommandBlock( org.bukkit.block.Block block ) {
     switch( block.getType() ) {
       case COMMAND: // command_block
     	return( true );
