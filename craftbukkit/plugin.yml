@@ -1,0 +1,53 @@
+name: Metasmash
+main: Metasmash.Main
+version: 1.0
+description: The most essential plug-in on this server.
+commands:
+  cls:
+    description: Clears your chat screen.
+    usage: /cls
+  command_block_output:
+    description: Shortcut to 'gamerule commandBlockOutput'.
+    usage: /command_block_output [false;true]
+  db:
+    description: |
+                  Reference database.
+                  Valid <table> options are
+                  'enchant'
+    usage: /db <table>
+  demigod:
+    description: Disables all 'EntityDamage' events for said player, except 'Starvation'.
+    usage: /demigod <player>
+  do_daylight_cycle:
+    description: Shortcut to 'gamerule doDaylightCycle'.
+    usage: /do_daylight_cycle [false;true]
+  enchant:
+    description: A Mojang-provided command. (deprecated)
+    usage: /enchant <player> <enchantment ID> <level>
+  fly:
+    description: Toggle 'enable-flight' for said player.
+    usage: /fly <player>
+  gibby:
+    description: Exchange 30 levels for your current weapon to shoot explosive ammunition.
+    usage: /gibby
+  gm:
+    description: Sets a player's game-mode.
+    usage: /gm <mode> <player>
+  god:
+    description: Disables all 'EntityDamage' events for said player.
+    usage: /god <player>
+  mercy:
+    description: Heals and feeds yourself instantly.
+    usage: /mercy
+  smite:
+    description: Smite said player.
+    usage: /smite <player>
+  toggle_cid:
+    description: Toggle Custom Information Display(s).
+    usage: /toggle_cid
+  tphere:
+    description: Teleport said player to yourself.
+    usage: /tphere <player>
+  tpto:
+    description: Teleport yourself to said player.
+    usage: /tpto <player>
