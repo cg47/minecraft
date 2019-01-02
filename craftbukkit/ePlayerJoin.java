@@ -1,8 +1,6 @@
 package Metasmash;
-
 public class ePlayerJoin implements org.bukkit.event.Listener {
   private Main plugin;
-  
   public ePlayerJoin( Main port ) {
     this.plugin = port;
   }
@@ -21,9 +19,9 @@ public class ePlayerJoin implements org.bukkit.event.Listener {
     this.plugin.sendMessage( self, "%cc_nw%[%cc_n%Tim%cc_nw%]%cc_b% I do." );
     this.plugin.sendMessage( self, "%cc_nw%<%cc_n%" + self.getDisplayName() + "%cc_nw%>%cc_b% You know many things that are hidden, O', Tim?" );
     this.plugin.sendMessage( self, "%cc_nw%[%cc_n%Tim%cc_nw%]%cc_b% Quite." );
-    /* togglemb */
+    /* toggle_cid register */
     this.plugin.registerBB( self );
-    // force settings to stick
+    // force 'fly' setting to stick on (re)join
     self.setAllowFlight( this.plugin.hasFly( self ) );
   }
 }
