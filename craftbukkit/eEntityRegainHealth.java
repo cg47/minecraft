@@ -1,8 +1,6 @@
 package Metasmash;
-
 public class eEntityRegainHealth implements org.bukkit.event.Listener {
   private Main plugin;
-  
   public eEntityRegainHealth( Main port ) {
     this.plugin = port;
   }
@@ -16,7 +14,7 @@ public class eEntityRegainHealth implements org.bukkit.event.Listener {
     if( ent instanceof org.bukkit.entity.Player ) {
       // entity -> player
       org.bukkit.entity.Player self = ( org.bukkit.entity.Player ) ent;
-      /* toggle_cid */
+      /* toggle_cid update */
       this.plugin.updateBB_HealthBar( self, self.getMaxHealth(), ( self.getMaxHealth() - self.getHealth() ) - e.getAmount() );
     }
   }
