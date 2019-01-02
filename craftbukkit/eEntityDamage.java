@@ -1,8 +1,6 @@
 package Metasmash;
-
 public class eEntityDamage implements org.bukkit.event.Listener {
   private Main plugin;
-  
   public eEntityDamage( Main port ) {
     this.plugin = port;
   }
@@ -16,18 +14,22 @@ public class eEntityDamage implements org.bukkit.event.Listener {
     if( ent instanceof org.bukkit.entity.Player ) {
       // entity -> player
       org.bukkit.entity.Player self = ( org.bukkit.entity.Player ) ent;
-      /* god | demigod */
+      /* god == true */
       if( this.plugin.hasGodMode( self ) ) {
         e.setCancelled( true );
       }
+      /* demigod == true */
       else if( this.plugin.hasDemiGodMode( self ) ) {
         switch( e.getCause() ) {
+          default:
+            e.setCancelled( true );
+            break;
           case STARVATION: break;
-          default: e.setCancelled( true );
         }
       }
+      /* else */
       else {
-    	/* toggle_cid */
+    	/* toggle_cid update */
     	this.plugin.updateBB_HealthBar( self, self.getMaxHealth(), e.getDamage() );
       }
     }
